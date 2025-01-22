@@ -1,0 +1,13 @@
+CREATE TABLE Localizacao (
+    id SERIAL PRIMARY KEY,
+    local GEOMETRY
+);
+
+INSERT INTO Localizacao (local)
+VALUES (ST_GeomFromText('POINT(30 10)', 4326)); 
+
+SELECT 
+    ST_X(local) AS longitude,  -- Extrai a longitude (coordenada X)
+    ST_Y(local) AS latitude    -- Extrai a latitude (coordenada Y)
+FROM Localizacao
+WHERE id = 1;

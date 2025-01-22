@@ -1,0 +1,12 @@
+version: '3.8'
+
+services:
+  db:
+    container_name: postgis
+    image: postgis/postgis:13-3.1
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: Henrique25@
+      POSTGRES_DB: denuncias
+    ports:
+      - "5432:5432"
